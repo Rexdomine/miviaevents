@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-24 mb-24">
           <div>
-            <h2 className="text-6xl font-light mb-8">Ready to start your <span className="italic text-primary">journey?</span></h2>
+            <h2 className="text-6xl font-light mb-8">Ready to start yours <span className="italic text-primary">journey?</span></h2>
             <p className="text-[#f8f7f6]/60 text-lg mb-12 max-w-md">Let&apos;s create something extraordinary together. Contact our team to begin the design process.</p>
             <Link href="mailto:miviaevents@gmail.com" className="text-3xl border-b-2 border-primary pb-2 font-light hover:text-primary transition-colors">miviaevents@gmail.com</Link>
           </div>
