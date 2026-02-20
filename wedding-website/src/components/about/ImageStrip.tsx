@@ -9,7 +9,7 @@ export default function ImageStrip() {
       ></div>
       <div
         className="w-1/3 aspect-[2/3] bg-cover bg-center rounded-lg translate-y-12"
-        style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuD45jr-dInVUqZCcG3cAIEphU5vJPvd974-QvYXgUxOurbaYocIfUhPI_bDGzFB6ooqUsm6AOrEZJpXZiUEn45O9fIHSYX48uhs5OG_tX7-WupkwhQaYYPdY76QmC0DovLqIGn5WcFveaQ968-gTBTaFf_FLKhvwQwVLZNWNG-Ubxqw0incjHmd0yyquLH3zC5RBtY1dEqU1TktrPeVQte5QxGLo4UgPpRINn4Tr_tawc17AgROyc6tMNiogbohL83jjulYvqaS6y0")' }}
+        style={{ backgroundImage: 'url("/portfolio/Tosin&Chika2195.jpg")' }}
       ></div>
       <div
         className="w-1/3 aspect-[2/3] bg-cover bg-center rounded-lg"

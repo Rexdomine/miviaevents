@@ -7,8 +7,8 @@ export default function FounderLetter() {
         <div className="flex flex-col md:flex-row gap-16 items-start">
           <div className="w-full md:w-1/2">
             <div
-              className="aspect-[3/4] bg-cover bg-center rounded-lg grayscale hover:grayscale-0 transition-all duration-700"
-              style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJBh7kyGyE9egd5oF6JURrVG3b3STW0bZXqm4Bl_PV9Nvu16XcrwyKCV-D3sG__Sel3337NpI8Z2IEBd_EITdG7rQzQec5V9aSanEAfZG6wk8xd_Th0JfIr4yCSXJQhv38a5AJ7he5QV-zShvCdtXpPbWlakvtg_4H4_NqWgy-TUSSg5d1LlS-IvJDR5YJkdgr3m5B-gHzIuJSxHi6lrac4RRm5dbfgqrIFNas7pfRiBZb9sIEhFhbCnFiIqb8LwgwjoKzc8DBXJc")' }}
+              className="aspect-[3/4] bg-cover bg-center rounded-lg transition-all duration-700"
+              style={{ backgroundImage: 'url("/images/our-story.jpg")' }}
             ></div>
           </div>
           <div className="w-full md:w-1/2 space-y-8 pt-10">
@@ -27,10 +27,7 @@ export default function FounderLetter() {
                  “Every event is crafted with elegance, creativity, and heart.”
               </p>
             </div>
-            <div className="pt-8">
-              <p className="font-bold text-xl mb-1">Olivia</p>
-              <p className="text-primary tracking-widest uppercase text-xs">Founder & Creative Director</p>
-            </div>
+            
           </div>
         </div>
       </div>
