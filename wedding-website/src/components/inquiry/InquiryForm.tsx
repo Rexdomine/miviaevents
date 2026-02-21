@@ -5,9 +5,22 @@ import React, { useState } from 'react';
 export default function InquiryForm() {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    const response = await fetch('https://formspree.io/f/mvzbbjaa', {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' },
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+    } else {
+      alert('Something went wrong. Please try again or email us directly.');
+    }
   };
 
   return (
@@ -19,12 +32,18 @@ export default function InquiryForm() {
         </div>
 
         {!submitted ? (
-          <form className="space-y-12" onSubmit={handleSubmit}>
+          <form
+            className="space-y-12"
+            onSubmit={handleSubmit}
+            action="https://formspree.io/f/mvzbbjaa"
+            method="POST"
+          >
             {/* Partner Names */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col">
                 <label className="text-xs uppercase tracking-widest text-[#9a864c] mb-2">Partner One Name</label>
                 <input
+                  name="partnerOneName"
                   className="py-3 px-0 border-0 border-b border-[#e7e1cf] dark:border-white/10 bg-transparent text-lg focus:ring-0 focus:border-primary placeholder:text-[#e7e1cf] dark:placeholder:text-white/20 text-[#1b180d] dark:text-white"
                   placeholder="First & Last Name"
                   type="text"
@@ -34,6 +53,7 @@ export default function InquiryForm() {
               <div className="flex flex-col">
                 <label className="text-xs uppercase tracking-widest text-[#9a864c] mb-2">Partner Two Name</label>
                 <input
+                  name="partnerTwoName"
                   className="py-3 px-0 border-0 border-b border-[#e7e1cf] dark:border-white/10 bg-transparent text-lg focus:ring-0 focus:border-primary placeholder:text-[#e7e1cf] dark:placeholder:text-white/20 text-[#1b180d] dark:text-white"
                   placeholder="First & Last Name"
                   type="text"
@@ -42,11 +62,24 @@ export default function InquiryForm() {
               </div>
             </div>
 
+            {/* Email */}
+            <div className="flex flex-col">
+              <label className="text-xs uppercase tracking-widest text-[#9a864c] mb-2">Email Address</label>
+              <input
+                name="email"
+                className="py-3 px-0 border-0 border-b border-[#e7e1cf] dark:border-white/10 bg-transparent text-lg focus:ring-0 focus:border-primary placeholder:text-[#e7e1cf] dark:placeholder:text-white/20 text-[#1b180d] dark:text-white"
+                placeholder="your@email.com"
+                type="email"
+                required
+              />
+            </div>
+
             {/* Date & Location */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col">
                 <label className="text-xs uppercase tracking-widest text-[#9a864c] mb-2">Wedding Date</label>
                 <input
+                  name="weddingDate"
                   className="py-3 px-0 border-0 border-b border-[#e7e1cf] dark:border-white/10 bg-transparent text-lg focus:ring-0 focus:border-primary text-[#1b180d] dark:text-white"
                   type="date"
                 />
@@ -54,6 +87,7 @@ export default function InquiryForm() {
               <div className="flex flex-col">
                 <label className="text-xs uppercase tracking-widest text-[#9a864c] mb-2">Location / Venue</label>
                 <input
+                  name="location"
                   className="py-3 px-0 border-0 border-b border-[#e7e1cf] dark:border-white/10 bg-transparent text-lg focus:ring-0 focus:border-primary placeholder:text-[#e7e1cf] dark:placeholder:text-white/20 text-[#1b180d] dark:text-white"
                   placeholder="City or Venue Name"
                   type="text"
@@ -66,6 +100,7 @@ export default function InquiryForm() {
               <div className="flex flex-col">
                 <label className="text-xs uppercase tracking-widest text-[#9a864c] mb-2">Budget Range</label>
                 <select
+                  name="budget"
                   className="py-3 px-0 border-0 border-b border-[#e7e1cf] dark:border-white/10 bg-transparent text-lg focus:ring-0 focus:border-primary appearance-none text-[#1b180d] dark:text-white"
                   defaultValue=""
                 >
@@ -79,6 +114,7 @@ export default function InquiryForm() {
               <div className="flex flex-col">
                 <label className="text-xs uppercase tracking-widest text-[#9a864c] mb-2">Guest Count</label>
                 <input
+                  name="guestCount"
                   className="py-3 px-0 border-0 border-b border-[#e7e1cf] dark:border-white/10 bg-transparent text-lg focus:ring-0 focus:border-primary placeholder:text-[#e7e1cf] dark:placeholder:text-white/20 text-[#1b180d] dark:text-white"
                   placeholder="Estimated attendees"
                   type="number"
@@ -90,11 +126,21 @@ export default function InquiryForm() {
             <div className="space-y-4">
               <label className="text-xs uppercase tracking-widest text-[#9a864c]">Services Needed</label>
               <div className="flex flex-wrap gap-3">
-                {['Full Planning', 'Event Design', 'Day-of Management', 'Destination Logistics'].map((service) => (
-                  <label key={service} className="group cursor-pointer">
-                    <input type="checkbox" className="hidden peer" />
+                {[
+                  { label: 'Full Planning', value: 'full-planning' },
+                  { label: 'Event Design', value: 'event-design' },
+                  { label: 'Day-of Management', value: 'day-of-management' },
+                  { label: 'Destination Logistics', value: 'destination-logistics' },
+                ].map(({ label, value }) => (
+                  <label key={value} className="group cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="services"
+                      value={value}
+                      className="hidden peer"
+                    />
                     <span className="px-5 py-2 border border-[#e7e1cf] dark:border-white/10 rounded-full text-sm peer-checked:bg-primary peer-checked:border-primary peer-checked:text-[#1b180d] transition-all hover:border-primary text-[#1b180d] dark:text-white">
-                      {service}
+                      {label}
                     </span>
                   </label>
                 ))}
@@ -105,6 +151,7 @@ export default function InquiryForm() {
             <div className="flex flex-col">
               <label className="text-xs uppercase tracking-widest text-[#9a864c] mb-2">Anything else we should know?</label>
               <textarea
+                name="additionalDetails"
                 className="py-3 px-0 border-0 border-b border-[#e7e1cf] dark:border-white/10 bg-transparent text-lg focus:ring-0 focus:border-primary placeholder:text-[#e7e1cf] dark:placeholder:text-white/20 resize-none text-[#1b180d] dark:text-white"
                 placeholder="Tell us about your vision..."
                 rows={4}
@@ -129,7 +176,7 @@ export default function InquiryForm() {
               <div>
                 <h4 className="text-lg font-bold mb-2 text-[#1b180d] dark:text-white">Instant Confirmation Message</h4>
                 <p className="text-sm italic text-[#9a864c] leading-relaxed">
-                    "Thank you for reaching out. Our lead planner will review your details and contact you within 48 hours to schedule your private consultation. We look forward to exploring your vision."
+                  &ldquo;Thank you for reaching out. Our lead planner will review your details and contact you within 48 hours to schedule your private consultation. We look forward to exploring your vision.&rdquo;
                 </p>
               </div>
             </div>

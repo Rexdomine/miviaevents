@@ -41,10 +41,10 @@ export default function ServicesList() {
           <div className="relative">
             <div className="relative aspect-[4/5] w-full">
                 <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXyQQCvBJRK_SLlhzWlHqUzQXg4XZArXXT7IJPZz9Ziucc75Ju3TIiyPtbdCPwgbCVcuM3O4snRIxH4_ei9w3PxJDk7T3Q1TDiopIX9rn7HqF-9BMG151fjFpPYI0ZVJ1ZkQvI18zPRLPC8CgDAjfnku52A3bF55wCTBgoT5doz2DUbUeuZEOgeXaPtbcQhb0SeBRGgNf8lrIr2QPqjXdzGfHRCxOM8560_44GUQLYEKa-7PxPgjx2gudQPvFyOFjelNmwQxFzbsk"
-                alt="Event Designer"
+                src="/images/mivia-logo.png"
+                alt="Mivia Events Logo"
                 fill
-                className="rounded-xl grayscale hover:grayscale-0 transition-all duration-1000 object-cover"
+                className="rounded-xl object-contain transition-all duration-1000 p-8 bg-white/5"
                 />
             </div>
             <div className="absolute -bottom-10 -left-10 bg-primary p-12 hidden md:block rounded-lg text-[#1b180d]">

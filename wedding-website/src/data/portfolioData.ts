@@ -15,6 +15,12 @@ export const portfolioImages = [
    "/portfolio/A10I0760.jpg",
   "/portfolio/Tosin&Chika2168.jpg",
   "/portfolio/Tosin&Chika1894.jpg",
+  "/portfolio/0U6A3092.jpg",
+  "/portfolio/A10I1020.jpg",
+  "/portfolio/DSC_8076.jpg",
+  "/portfolio/DSC01232.jpg",
+  "/portfolio/A10I0999.JPG",
+   "/portfolio/DSC_6584.jpg",
   // Add more images as needed:
   // "/portfolio/06.png",
 ];
