@@ -66,7 +66,7 @@ export default function PortfolioGrid() {
                         style={{ backgroundImage: `url('${item.image}')` }}
                     ></div>
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 opacity-60"></div>
-                    <div className="absolute inset-0 p-8 flex flex-col justify-between text-white">
+                    <div className="absolute inset-0 p-8 flex flex-col justify-between text-gray-900">
                         <div className="flex justify-between items-start">
                             <span className="text-xs uppercase tracking-widest opacity-80">{item.volume}</span>
                             {item.featured && <span className="material-symbols-outlined text-primary">auto_awesome</span>}
@@ -82,7 +82,7 @@ export default function PortfolioGrid() {
         })}
       </div>
       <div className="mt-20 text-center">
-        <button className="px-12 py-5 border border-primary text-[#1b180d] dark:text-white uppercase tracking-[0.3em] text-xs font-bold hover:bg-primary hover:text-white transition-all rounded-lg cursor-pointer">
+        <button className="px-12 py-5 border border-primary text-[#1b180d] dark:text-gray-900 uppercase tracking-[0.3em] text-xs font-bold hover:bg-primary hover:text-gray-900 transition-all rounded-lg cursor-pointer">
             Load More Archives
         </button>
       </div>

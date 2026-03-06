@@ -21,17 +21,17 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="JOIN OUR MAILING LIST"
-                className="bg-transparent border-b border-white/20 text-xs w-full py-2 focus:outline-none focus:border-primary transition-colors placeholder:text-white/20"
+                className="bg-transparent border-b border-white/20 text-xs w-full py-2 focus:outline-none focus:border-primary transition-colors placeholder:text-gray-900/20"
               />
               <button type="submit" className="material-symbols-outlined text-primary">arrow_forward</button>
             </form>
           </div>
         </div>
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.4em] font-bold text-white/30">
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.4em] font-bold text-gray-900/30">
           <span>© {new Date().getFullYear()} Mivia Events Worldwide</span>
           <div className="flex gap-12">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-gray-900 transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-gray-900 transition-colors">Terms of Service</Link>
           </div>
           <span>Designed for Excellence</span>
         </div>

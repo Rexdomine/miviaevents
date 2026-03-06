@@ -6,7 +6,7 @@ export default function Testimonials() {
     <section className="py-32 bg-background-light dark:bg-background-dark">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <span className="material-symbols-outlined text-5xl text-primary/40 mb-8">format_quote</span>
-        <blockquote className="text-3xl md:text-4xl font-light leading-relaxed mb-12 italic text-[#1b180d] dark:text-white">
+        <blockquote className="text-3xl md:text-4xl font-light leading-relaxed mb-12 italic text-[#1b180d] dark:text-gray-900">
             "Mivia Events turned our vision into magic. Every detail was perfection!"
         </blockquote>
         <div className="flex flex-col items-center">
@@ -19,7 +19,7 @@ export default function Testimonials() {
             />
           </div>
           <cite className="not-italic">
-            <span className="block font-bold uppercase tracking-widest text-sm text-[#1b180d] dark:text-white">Ada & Chike</span>
+            <span className="block font-bold uppercase tracking-widest text-sm text-[#1b180d] dark:text-gray-900">Ada & Chike</span>
             <span className="block text-primary text-xs uppercase tracking-widest mt-1">Lagos Wedding</span>
           </cite>
         </div>

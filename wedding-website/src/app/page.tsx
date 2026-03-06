@@ -3,6 +3,7 @@ import Philosophy from "@/components/home/Philosophy";
 import FeaturedPortfolio from "@/components/home/FeaturedPortfolio";
 import ServicesList from "@/components/home/ServicesList";
 import Testimonials from "@/components/home/Testimonials";
+import InstagramFeed from "@/components/home/InstagramFeed";
 import Locations from "@/components/home/Locations";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <FeaturedPortfolio />
       <ServicesList />
       <Testimonials />
+      <InstagramFeed />
       <Locations />
     </>
   );

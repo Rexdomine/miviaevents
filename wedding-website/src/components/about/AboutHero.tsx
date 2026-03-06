@@ -6,11 +6,11 @@ export default function AboutHero() {
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-5 z-10">
           <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Mivia Events</span>
-          <h2 className="text-6xl md:text-8xl font-light leading-[1.1] mb-8 italic">
+          <h2 className="text-gray-900 text-6xl md:text-8xl font-light leading-[1.1] mb-8 italic">
             About <br/>
             <span className="font-bold not-italic">Us</span>
           </h2>
-          <p className="text-lg md:text-xl text-[#1b180d]/70 dark:text-white/70 max-w-md leading-relaxed">
+          <p className="text-lg md:text-xl text-[#1b180d]/70 dark:text-gray-900/70 max-w-md leading-relaxed">
             At Mivia events, planning is more than logistics — it is the art of storytelling through design, atmosphere, and experience.
           </p>
         </div>

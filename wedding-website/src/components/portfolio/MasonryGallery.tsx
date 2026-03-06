@@ -11,7 +11,7 @@ export default function MasonryGallery() {
     <section className="max-w-[1920px] mx-auto px-4 md:px-8 pb-32">
         <div className="text-center mb-20">
             <h2 className="text-sm uppercase tracking-[0.3em] text-[#9a864c] mb-4">The Gallery</h2>
-            <h3 className="text-4xl md:text-5xl font-light italic text-[#1b180d] dark:text-white">Captured Moments</h3>
+            <h3 className="text-4xl md:text-5xl font-light italic text-[#1b180d] dark:text-gray-900">Captured Moments</h3>
         </div>
       <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
         {images.map((src, index) => (

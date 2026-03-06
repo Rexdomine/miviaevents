@@ -39,19 +39,16 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="sticky top-0 z-50 w-full px-6 lg:px-20 py-4 flex items-center justify-between"
+        className="sticky top-0 z-50 w-full px-6 lg:px-20 py-4 flex items-center justify-between bg-white/80 backdrop-blur-md"
         style={{
-          background: 'rgba(255, 252, 245, 0.15)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          borderBottom: '1px solid rgba(231, 225, 207, 0.3)',
-          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.08)',
+          borderBottom: '1px solid rgba(17, 17, 17, 0.1)',
+          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.05)',
         }}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3 text-[#111111]">
           <span className="material-symbols-outlined text-primary text-3xl">storm</span>
-          <span className="text-xl font-bold tracking-[0.2em] uppercase">Mivia Events</span>
+          <span className="text-xl font-bold tracking-[0.2em] uppercase text-[#111111]">Mivia Events</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -64,7 +61,7 @@ export default function Navbar() {
                 href={href}
                 className="relative px-4 py-2 rounded-lg transition-all duration-300 group"
                 style={{
-                  color: active ? '#1b180d' : undefined,
+                  color: active ? '#1b180d' : '#111111',
                   background: active
                     ? 'linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(184, 148, 30, 0.85))'
                     : 'transparent',
@@ -147,14 +144,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
           <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-3">
             <span className="material-symbols-outlined text-primary text-2xl">storm</span>
-            <span className="text-lg font-bold tracking-[0.2em] uppercase text-white">Mivia Events</span>
+            <span className="text-lg font-bold tracking-[0.2em] uppercase text-gray-900">Mivia Events</span>
           </Link>
           <button
             onClick={() => setMenuOpen(false)}
             className="flex items-center justify-center w-10 h-10 rounded-lg"
             style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)' }}
           >
-            <span className="material-symbols-outlined text-white">close</span>
+            <span className="material-symbols-outlined text-gray-900">close</span>
           </button>
         </div>
 
@@ -218,7 +215,7 @@ export default function Navbar() {
             <span className="material-symbols-outlined text-lg">calendar_month</span>
             Book Consultation
           </Link>
-          <p className="text-center text-white/30 text-xs mt-4 tracking-widest uppercase">
+          <p className="text-center text-gray-900/30 text-xs mt-4 tracking-widest uppercase">
             Mivia Events · Premium Event Planning
           </p>
         </div>

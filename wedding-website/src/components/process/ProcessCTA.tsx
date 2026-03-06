@@ -7,7 +7,7 @@ export default function ProcessCTA() {
       <div className="max-w-4xl mx-auto px-6 text-center">
         <span className="material-symbols-outlined text-primary text-5xl mb-6">auto_awesome</span>
         <h2 className="text-4xl md:text-5xl font-light italic mb-8">Ready to begin your journey?</h2>
-        <p className="text-xl text-[#1b180d]/70 dark:text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl text-[#1b180d]/70 dark:text-gray-900/70 mb-12 max-w-2xl mx-auto leading-relaxed">
             We only take on a limited number of celebrations each year to ensure every couple receives our undivided attention and the highest level of care.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

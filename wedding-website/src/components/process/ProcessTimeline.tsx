@@ -13,7 +13,7 @@ export default function ProcessTimeline() {
           <span className="text-primary text-6xl opacity-40 italic block mb-2 font-display">01</span>
           <h3 className="text-3xl font-bold mb-4">The Consultation</h3>
           <p className="text-primary/80 text-lg italic mb-6">Vision Discovery & Personal Connection</p>
-          <p className="text-lg leading-relaxed text-[#1b180d]/70 dark:text-white/70">
+          <p className="text-lg leading-relaxed text-[#1b180d]/70 dark:text-gray-900/70">
               Every masterpiece begins with a conversation. We delve into your story, your aesthetic preferences, and the emotions you wish to evoke. This is where your dream begins to take a tangible shape.
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function ProcessTimeline() {
           <span className="text-primary text-6xl opacity-40 italic block mb-2 font-display">02</span>
           <h3 className="text-3xl font-bold mb-4">Design & Curation</h3>
           <p className="text-primary/80 text-lg italic mb-6">Mood Boards & Custom Palettes</p>
-          <p className="text-lg leading-relaxed text-[#1b180d]/70 dark:text-white/70">
+          <p className="text-lg leading-relaxed text-[#1b180d]/70 dark:text-gray-900/70">
               Our creative team curates a bespoke design narrative, selecting textures, colors, and floral scents that resonate with your personality. We build a visual language that is exclusively yours.
           </p>
         </div>
@@ -63,7 +63,7 @@ export default function ProcessTimeline() {
           <span className="text-primary text-6xl opacity-40 italic block mb-2 font-display">03</span>
           <h3 className="text-3xl font-bold mb-4">Vendor Selection</h3>
           <p className="text-primary/80 text-lg italic mb-6">Exclusive Network & Vetting Excellence</p>
-          <p className="text-lg leading-relaxed text-[#1b180d]/70 dark:text-white/70">
+          <p className="text-lg leading-relaxed text-[#1b180d]/70 dark:text-gray-900/70">
               We connect you with our vetted network of world-class artisans, from Michelin-starred caterers to avant-garde florists. We manage the contracts and details so you only have to make the final choice.
           </p>
         </div>
@@ -88,7 +88,7 @@ export default function ProcessTimeline() {
           <span className="text-primary text-6xl opacity-40 italic block mb-2 font-display">04</span>
           <h3 className="text-3xl font-bold mb-4">Execution</h3>
           <p className="text-primary/80 text-lg italic mb-6">Seamless Coordination & Day-of Management</p>
-          <p className="text-lg leading-relaxed text-[#1b180d]/70 dark:text-white/70">
+          <p className="text-lg leading-relaxed text-[#1b180d]/70 dark:text-gray-900/70">
               On your wedding day, our team acts as the conductors of a silent orchestra. We ensure every petal is in place, every transition is seamless, and you are free to fully inhabit the joy of the moment.
           </p>
         </div>

@@ -26,8 +26,8 @@ export default function PortfolioPreview() {
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
-            <h4 className="text-white text-2xl font-light">Lagos Grandeur</h4>
-            <p className="text-white/80 text-sm tracking-widest uppercase mt-2">The Eko Hotel Series</p>
+            <h4 className="text-gray-900 text-2xl font-light">Lagos Grandeur</h4>
+            <p className="text-gray-900/80 text-sm tracking-widest uppercase mt-2">The Eko Hotel Series</p>
           </div>
         </div>
 
@@ -41,8 +41,8 @@ export default function PortfolioPreview() {
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
-              <h4 className="text-white text-lg font-light">Abuja Elegance</h4>
-              <p className="text-white/80 text-xs tracking-widest uppercase mt-1">Maitama Estate</p>
+              <h4 className="text-gray-900 text-lg font-light">Abuja Elegance</h4>
+              <p className="text-gray-900/80 text-xs tracking-widest uppercase mt-1">Maitama Estate</p>
             </div>
           </div>
 
@@ -54,8 +54,8 @@ export default function PortfolioPreview() {
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
-              <h4 className="text-white text-lg font-light">Destination Romance</h4>
-              <p className="text-white/80 text-xs tracking-widest uppercase mt-1">Marrakech Celebration</p>
+              <h4 className="text-gray-900 text-lg font-light">Destination Romance</h4>
+              <p className="text-gray-900/80 text-xs tracking-widest uppercase mt-1">Marrakech Celebration</p>
             </div>
           </div>
         </div>

@@ -12,8 +12,8 @@ export default function FounderLetter() {
             ></div>
           </div>
           <div className="w-full md:w-1/2 space-y-8 pt-10">
-            <h3 className="text-4xl font-bold border-b border-primary/20 pb-6">Our Story</h3>
-            <div className="space-y-6 text-lg leading-relaxed text-[#1b180d]/80 dark:text-white/80 italic">
+            <h3 className="text-gray-900 text-4xl font-bold border-b border-primary/20 pb-6">Our Story</h3>
+            <div className="space-y-6 text-lg leading-relaxed text-[#1b180d]/80 dark:text-gray-900/80 italic">
               <p>
                 <span className="text-5xl font-bold text-primary float-left mr-3 leading-[1]">M</span>ivia Events started with a simple belief: every moment, no matter how big or small, deserves to feel special.
               </p>
@@ -27,7 +27,7 @@ export default function FounderLetter() {
                  “Every event is crafted with elegance, creativity, and heart.”
               </p>
             </div>
-            
+
           </div>
         </div>
       </div>

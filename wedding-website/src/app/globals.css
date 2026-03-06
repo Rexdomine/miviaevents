@@ -2,11 +2,18 @@
 
 @theme {
   --color-primary: #eebd2b;
-  --color-background-light: #f8f7f6;
-  --color-background-dark: #221d10;
+  --color-background-light: #F9F9F9;
+  --color-background-dark: #FFFFFF;
 
   --font-serif: var(--font-newsreader), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-display: var(--font-newsreader), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@layer base {
+  body {
+    background-color: #FFFFFF;
+    color: #111111;
+  }
 }
 
 /* Custom Utilities based on HTML */

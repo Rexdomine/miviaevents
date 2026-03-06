@@ -30,7 +30,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProp
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 md:p-10">
       <button
         onClick={onClose}
-        className="absolute top-6 right-6 text-white hover:text-primary transition-colors z-10"
+        className="absolute top-6 right-6 text-gray-900 hover:text-primary transition-colors z-10"
       >
         <span className="material-symbols-outlined text-4xl">close</span>
       </button>
