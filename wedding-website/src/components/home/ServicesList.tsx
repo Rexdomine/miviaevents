@@ -1,12 +1,15 @@
 import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
+import FadeIn from '@/components/FadeIn';
+
 
 export default function ServicesList() {
   return (
     <section className="py-32 bg-background-dark text-gray-900">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid md:grid-cols-2 gap-24 items-center">
+          <FadeIn>
           <div>
             <h2 className="text-5xl md:text-6xl font-light leading-tight mb-12">
                 Elevated Planning for <span className="italic text-primary">Extraordinary</span> Occasions.
@@ -38,6 +41,8 @@ export default function ServicesList() {
               </li>
             </ul>
           </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
           <div className="relative">
             <div className="relative aspect-[4/5] w-full">
                 <Image
@@ -52,6 +57,7 @@ export default function ServicesList() {
               <p className="opacity-80 text-xs uppercase tracking-widest font-bold">Years of Excellence</p>
             </div>
           </div>
+          </FadeIn>
         </div>
       </div>
     </section>

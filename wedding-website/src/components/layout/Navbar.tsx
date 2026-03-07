@@ -121,7 +121,7 @@ export default function Navbar() {
               border: '1px solid rgba(212,175,55,0.2)',
             }}
           >
-            <span className="material-symbols-outlined text-xl">
+            <span className="material-symbols-outlined text-xl text-[#111111]">
               {menuOpen ? 'close' : 'menu'}
             </span>
           </button>

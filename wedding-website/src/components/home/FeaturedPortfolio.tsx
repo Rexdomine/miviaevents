@@ -1,17 +1,20 @@
 import Link from 'next/link';
 import React from 'react';
+import FadeIn from '@/components/FadeIn';
 
 export default function FeaturedPortfolio() {
   return (
     <section className="text-gray-900 pb-32 px-6 md:px-12 bg-background-light dark:bg-background-dark">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-16">
-          <div>
-            <h3 className="text-4xl font-light tracking-tight">Featured Portfolio</h3>
-            <p className="text-[#1b180d]/60 dark:text-gray-900/60 mt-2 italic">A glimpse into our most prestigious events</p>
+        <FadeIn>
+          <div className="flex justify-between items-end mb-16">
+            <div>
+              <h3 className="text-4xl font-light tracking-tight">Featured Portfolio</h3>
+              <p className="text-[#1b180d]/60 dark:text-gray-900/60 mt-2 italic">A glimpse into our most prestigious events</p>
+            </div>
+            <Link href="/portfolio" className="text-sm uppercase tracking-widest font-bold border-b border-primary pb-1 hover:text-primary transition-colors">View All Works</Link>
           </div>
-          <Link href="/portfolio" className="text-sm uppercase tracking-widest font-bold border-b border-primary pb-1 hover:text-primary transition-colors">View All Works</Link>
-        </div>
+        </FadeIn>
         <div className="grid grid-cols-12 gap-8">
           {/* Large Feature */}
           <div className="col-span-12 md:col-span-8 group relative overflow-hidden rounded-xl">
@@ -52,7 +55,7 @@ export default function FeaturedPortfolio() {
                 style={{ backgroundImage: 'url("/portfolio/Tosin&Chika3768.jpg")' }}
             ></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-10">
-              <h4 className="text-gray-900 text-2xl font-light">Celebration & Love</h4>
+              <h4 className="text-gray-900 text-2xl font-light">Celebration &amp; Love</h4>
             </div>
           </div>
         </div>
