@@ -99,17 +99,18 @@ export default function InquiryForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col">
                 <label className="text-xs uppercase tracking-widest text-[#9a864c] mb-2">Budget Range</label>
-                <select
-                  name="budget"
-                  className="py-3 px-0 border-0 border-b border-[#111111] bg-transparent text-lg focus:ring-0 focus:border-primary appearance-none text-[#111111]"
-                  defaultValue=""
-                >
-                  <option disabled value="" className="bg-white text-[#111111]">Select an investment range</option>
-                  <option className="bg-white text-[#111111]">$50k - $100k</option>
-                  <option className="bg-white text-[#111111]">$100k - $250k</option>
-                  <option className="bg-white text-[#111111]">$250k - $500k</option>
-                  <option className="bg-white text-[#111111]">$500k +</option>
-                </select>
+                <div className="relative w-full">
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-500">
+                    ₦
+                  </span>
+                  <input
+                    type="text"
+                    name="budget"
+                    placeholder="Enter your budget (e.g. 5,000,000)"
+                    className="w-full bg-transparent text-[#111111] border-0 border-b border-gray-300 py-3 pl-5 focus:outline-none focus:border-gray-900 focus:ring-0 transition-colors"
+                    required
+                  />
+                </div>
               </div>
               <div className="flex flex-col">
                 <label className="text-xs uppercase tracking-widest text-[#9a864c] mb-2">Guest Count</label>

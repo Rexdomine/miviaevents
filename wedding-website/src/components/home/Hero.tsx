@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -22,14 +23,12 @@ export default function Hero() {
         <p className="text-white/90 text-lg md:text-2xl font-light italic max-w-2xl mx-auto mb-10">
             Creating Unforgettable Moments
         </p>
-        <a
-            href="https://forms.gle/kRe2g3o4W7pPnWez9"
-            target="_blank"
-            rel="noopener noreferrer"
+        <Link
+            href="/contact"
             className="inline-block bg-primary text-[#1b180d] px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-[0.2em] hover:scale-105 transition-transform"
         >
             Book a Consultation
-        </a>
+        </Link>
       </div>
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
         <span className="material-symbols-outlined text-white text-3xl">keyboard_double_arrow_down</span>
