@@ -1,225 +1,172 @@
 'use client';
 
-import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-const navLinks = [
-  { href: '/', label: 'Home', icon: 'home' },
-  { href: '/services', label: 'Services', icon: 'design_services' },
-  { href: '/process', label: 'Process', icon: 'list_alt' },
-  { href: '/portfolio', label: 'Portfolio', icon: 'photo_library' },
-  { href: '/about', label: 'About', icon: 'info' },
-];
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Close menu on route change
   useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-  // Prevent body scroll when menu is open
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => { document.body.style.overflow = ''; };
-  }, [menuOpen]);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
-    return pathname.startsWith(href);
-  };
+  // Pages that have dark background/images at the top
+  const isDarkHeroPage = pathname === '/' || pathname === '/portfolio' || pathname === '/process' || pathname === '/services';
+
+  // Dynamic navbar styling based on scroll and page background
+  const navStyles = isScrolled
+    ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-stone-200/20 py-5 text-stone-900'
+    : isDarkHeroPage
+    ? 'bg-transparent py-8 text-white'
+    : 'bg-transparent py-8 text-stone-900';
 
   return (
     <>
-      <header
-        className="sticky top-0 z-50 w-full px-6 lg:px-20 py-4 flex items-center justify-between bg-white/80 backdrop-blur-md"
-        style={{
-          borderBottom: '1px solid rgba(17, 17, 17, 0.1)',
-          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.05)',
-        }}
-      >
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 text-[#111111]">
-          <span className="material-symbols-outlined text-primary text-3xl">storm</span>
-          <span className="text-xl font-bold tracking-[0.2em] uppercase text-[#111111]">Mivia Events</span>
+      <nav className={`fixed w-full z-[50] top-0 left-0 px-4 md:px-12 flex justify-between items-center transition-all duration-300 ${navStyles}`}>
+        {/* Left Button */}
+        <Link
+          href="/contact"
+          className="text-[10px] sm:text-xs md:text-sm tracking-[0.25em] uppercase font-medium hover:opacity-75 transition-opacity z-[51] font-sans"
+        >
+          ENQUIRE
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-2 text-sm font-medium uppercase tracking-widest">
-          {navLinks.map(({ href, label }) => {
-            const active = isActive(href);
-            return (
-              <Link
-                key={href}
-                href={href}
-                className="relative px-4 py-2 rounded-lg transition-all duration-300 group"
-                style={{
-                  color: active ? '#1b180d' : '#111111',
-                  background: active
-                    ? 'linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(184, 148, 30, 0.85))'
-                    : 'transparent',
-                  boxShadow: active
-                    ? '0 4px 15px rgba(212, 175, 55, 0.35), inset 0 1px 0 rgba(255,255,255,0.3)'
-                    : undefined,
-                  backdropFilter: active ? 'blur(10px)' : undefined,
-                  fontWeight: active ? '700' : undefined,
-                }}
-              >
-                {!active && (
-                  <span
-                    className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      background: 'rgba(212, 175, 55, 0.12)',
-                      border: '1px solid rgba(212, 175, 55, 0.25)',
-                    }}
-                  />
-                )}
-                <span className={`relative z-10 ${!active ? 'group-hover:text-primary transition-colors duration-300' : ''}`}>
-                  {label}
-                </span>
-                {active && (
-                  <span
-                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full"
-                    style={{ background: '#1b180d', opacity: 0.6 }}
-                  />
-                )}
-              </Link>
-            );
-          })}
-        </nav>
+        {/* Center Logo */}
+        <Link
+          href="/"
+          className="text-xl sm:text-2xl md:text-3xl tracking-[0.3em] font-display uppercase absolute left-1/2 -translate-x-1/2 z-[51] transition-transform duration-300 hover:scale-105 whitespace-nowrap"
+        >
+          MIVIA EVENTS
+        </Link>
 
-        {/* CTA + Mobile Menu Toggle */}
-        <div className="flex items-center gap-4">
-          <Link
-            href="/contact"
-            className="hidden lg:flex items-center justify-center px-6 py-2 rounded-lg font-bold text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer"
-            style={{
-              background: 'linear-gradient(135deg, rgba(212,175,55,0.85), rgba(184,148,30,0.9))',
-              color: '#1b180d',
-              backdropFilter: 'blur(10px)',
-              boxShadow: '0 4px 15px rgba(212,175,55,0.3), inset 0 1px 0 rgba(255,255,255,0.25)',
-              border: '1px solid rgba(212,175,55,0.4)',
-            }}
-          >
-            Book Consultation
-          </Link>
+        {/* Right Button / Custom 2-Line Hamburger Menu */}
+        <button
+          onClick={() => setIsMenuOpen(true)}
+          className="flex items-center gap-2 sm:gap-3 group focus:outline-none cursor-pointer z-[51]"
+          aria-label="Toggle Menu"
+        >
+          <span className="text-[10px] sm:text-xs md:text-sm tracking-[0.25em] uppercase font-medium group-hover:opacity-75 transition-opacity font-sans">
+            MENU
+          </span>
+          <div className="flex flex-col justify-center gap-1.5 w-7 h-5">
+            <span className="block h-[2px] w-7 bg-current transition-all duration-300 group-hover:w-4 group-hover:translate-x-3"></span>
+            <span className="block h-[2px] w-4 bg-current transition-all duration-300 self-end group-hover:w-7"></span>
+          </div>
+        </button>
+      </nav>
 
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg cursor-pointer transition-all duration-300"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-            style={{
-              background: menuOpen ? 'rgba(212,175,55,0.15)' : 'transparent',
-              border: '1px solid rgba(212,175,55,0.2)',
-            }}
-          >
-            <span className="material-symbols-outlined text-xl text-[#111111]">
-              {menuOpen ? 'close' : 'menu'}
-            </span>
-          </button>
-        </div>
-      </header>
+      {/* The Side Drawer Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            {/* Clickable Backdrop Blur Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMenuOpen(false)}
+              className="fixed inset-0 bg-black z-[99] cursor-pointer"
+            />
 
-      {/* Full-screen Mobile Menu Overlay */}
-      <div
-        className="fixed inset-0 z-40 md:hidden flex flex-col transition-all duration-500"
-        style={{
-          opacity: menuOpen ? 1 : 0,
-          pointerEvents: menuOpen ? 'auto' : 'none',
-          transform: menuOpen ? 'translateX(0)' : 'translateX(100%)',
-          background: 'rgba(27, 24, 13, 0.97)',
-          backdropFilter: 'blur(24px)',
-          WebkitBackdropFilter: 'blur(24px)',
-        }}
-      >
-        {/* Menu Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
-          <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-3">
-            <span className="material-symbols-outlined text-primary text-2xl">storm</span>
-            <span className="text-lg font-bold tracking-[0.2em] uppercase text-gray-900">Mivia Events</span>
-          </Link>
-          <button
-            onClick={() => setMenuOpen(false)}
-            className="flex items-center justify-center w-10 h-10 rounded-lg"
-            style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)' }}
-          >
-            <span className="material-symbols-outlined text-gray-900">close</span>
-          </button>
-        </div>
+            {/* Side Drawer Panel */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 26, stiffness: 170 }}
+              className="fixed inset-y-0 right-0 w-full md:w-1/2 h-full z-[100] flex flex-col justify-between p-8 md:p-16 text-white shadow-2xl bg-[url('/portfolio/0U6A1575.jpg')] bg-cover bg-center overflow-y-auto"
+            >
+              {/* Premium Dark Overlay & Frosted Glass layer */}
+              <div className="absolute inset-0 bg-stone-950/85 backdrop-blur-md z-[-1]" />
 
-        {/* Nav Links */}
-        <nav className="flex-1 flex flex-col justify-center px-8 gap-2">
-          {navLinks.map(({ href, label, icon }, index) => {
-            const active = isActive(href);
-            return (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-5 px-6 py-5 rounded-2xl transition-all duration-300"
-                style={{
-                  background: active
-                    ? 'linear-gradient(135deg, rgba(212,175,55,0.25), rgba(184,148,30,0.15))'
-                    : 'rgba(255,255,255,0.03)',
-                  border: active
-                    ? '1px solid rgba(212,175,55,0.4)'
-                    : '1px solid rgba(255,255,255,0.06)',
-                  animationDelay: `${index * 60}ms`,
-                }}
-              >
-                <span
-                  className="material-symbols-outlined text-2xl"
-                  style={{ color: active ? '#D4AF37' : 'rgba(255,255,255,0.5)' }}
+              {/* Drawer Top */}
+              <div className="flex justify-between items-center w-full z-10">
+                {/* Brand Logo in Drawer */}
+                <Link
+                  href="/"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-xl tracking-[0.3em] font-display uppercase"
                 >
-                  {icon}
-                </span>
-                <span
-                  className="text-xl font-medium tracking-widest uppercase"
-                  style={{
-                    color: active ? '#D4AF37' : 'rgba(255,255,255,0.85)',
-                    fontWeight: active ? '700' : '400',
-                  }}
+                  MIVIA EVENTS
+                </Link>
+
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center gap-2 group cursor-pointer focus:outline-none"
+                  aria-label="Close Menu"
                 >
-                  {label}
-                </span>
-                {active && (
-                  <span className="ml-auto material-symbols-outlined text-primary text-sm">
-                    chevron_right
+                  <span className="text-xs tracking-[0.25em] uppercase font-light text-white/80 group-hover:text-white transition-colors font-sans">
+                    CLOSE
                   </span>
-                )}
-              </Link>
-            );
-          })}
-        </nav>
+                  <div className="relative w-6 h-6 flex items-center justify-center">
+                    <span className="absolute block h-[1.5px] w-5 bg-white/80 group-hover:bg-white rotate-45 transition-transform duration-300"></span>
+                    <span className="absolute block h-[1.5px] w-5 bg-white/80 group-hover:bg-white -rotate-45 transition-transform duration-300"></span>
+                  </div>
+                </button>
+              </div>
 
-        {/* Book Consultation CTA */}
-        <div className="px-8 pb-12 pt-4 border-t border-white/10">
-          <Link
-            href="/contact"
-            onClick={() => setMenuOpen(false)}
-            className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm uppercase tracking-[0.2em] transition-all duration-300"
-            style={{
-              background: 'linear-gradient(135deg, #D4AF37, #B89C1E)',
-              color: '#1b180d',
-              boxShadow: '0 6px 25px rgba(212,175,55,0.35)',
-            }}
-          >
-            <span className="material-symbols-outlined text-lg">calendar_month</span>
-            Book Consultation
-          </Link>
-          <p className="text-center text-gray-900/30 text-xs mt-4 tracking-widest uppercase">
-            Mivia Events · Premium Event Planning
-          </p>
-        </div>
-      </div>
+              {/* Drawer Middle Links */}
+              <div className="flex flex-col space-y-6 md:space-y-8 my-auto pl-4 md:pl-12 z-10">
+                {[
+                  { name: 'Home', path: '/' },
+                  { name: 'Services', path: '/services' },
+                  { name: 'Process', path: '/process' },
+                  { name: 'Portfolio', path: '/portfolio' },
+                  { name: 'About', path: '/about' },
+                  { name: 'Contact', path: '/contact' },
+                ].map((item) => (
+                  <Link
+                    key={item.path}
+                    href={item.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="font-serif text-3xl md:text-5xl tracking-wide block transition-all duration-500 hover:italic hover:translate-x-2 text-white/80 hover:text-white"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Drawer Footer info */}
+              <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-start md:items-center text-xs tracking-widest text-white/40 uppercase gap-4 z-10 font-sans">
+                <div>
+                  <p>© {new Date().getFullYear()} MIVIA EVENTS</p>
+                </div>
+                <div className="flex gap-6">
+                  <a
+                    href="https://instagram.com/miviaevents"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Instagram
+                  </a>
+                  <a
+                    href="mailto:hello@miviaevents.com"
+                    className="hover:text-white transition-colors"
+                  >
+                    Contact
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }
+

@@ -6,7 +6,7 @@ import FadeIn from '@/components/FadeIn';
 
 export default function ServicesList() {
   return (
-    <section className="py-32 bg-background-dark text-gray-900">
+    <section className="py-20 md:py-24 bg-background-dark text-gray-900">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid md:grid-cols-2 gap-24 items-center">
           <FadeIn>

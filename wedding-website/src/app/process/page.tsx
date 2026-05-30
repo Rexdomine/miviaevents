@@ -14,7 +14,7 @@ export default function ProcessPage() {
             alt="Luxury wedding celebration background"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-[center_45%]"
           />
         </div>
         <div className="absolute inset-0 bg-black/60 z-10" />
@@ -31,137 +31,157 @@ export default function ProcessPage() {
         </FadeIn>
       </header>
 
-      <main className="bg-white text-gray-900">
+      <main className="w-full">
 
-        {/* ── Step 01: The Consultation (Image Left) ── */}
-        <section className="py-20 md:py-32 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-            <FadeIn delay={0.2}>
-              <div className="relative order-2 md:order-1">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJpuetgF-FDtmCBDmR0Ys_6xYqFMTlT9J5CeT5CaoEoGJluPGNXa0k_ZAxy2HA0Y8QH96Xydx4fd5M94gTx_rl0_6z3dZzLD2XoUqu-fN2-ojYZk6HOnnSAvdNp14JOODUZEmIUKCMiSxbznKlgIRa9fTbLKqP6OKrvnUmvfipToIvBvkjAkt_bKAp4pAlu9TQk0_m5oZGgykC4eXDSeuA8UX1CTMV95dB6wfnHajLRzKnCHL58GERFfPV1FHqZ74O35nboTabCJG2"
-                    alt="Consultation session with mood boards"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </FadeIn>
+        {/* ── Step 01: The Consultation (Text Left / Image Right) ── */}
+        <section className="w-full py-24 md:py-32 px-8 bg-[#FAFAFA]">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            {/* Text Column */}
             <FadeIn>
-              <div className="relative order-1 md:order-2">
-                <span className="text-[8rem] md:text-[12rem] leading-none absolute -z-10 opacity-15 -top-12 -left-8 font-serif text-stone-200 select-none">01</span>
-                <p className="text-[10px] uppercase font-semibold tracking-[0.25em] text-stone-400 mb-4">Vision Discovery</p>
-                <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-snug">The Consultation</h2>
-                <p className="text-gray-900 leading-relaxed mb-10 font-light">
-                  Every masterpiece begins with a conversation. We delve into your story, your aesthetic preferences, and the emotions you wish to evoke. This is where your dream begins to take a tangible shape.
+              <div className="flex flex-col items-start text-left">
+                <p className="text-[10px] uppercase font-semibold tracking-[0.25em] text-[#D4AF37] mb-4 font-sans">Vision Discovery</p>
+                <h2 className="font-[var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl uppercase tracking-wide mb-8 leading-tight text-stone-800">
+                  The Consultation
+                </h2>
+                <p className="font-sans text-base md:text-lg leading-relaxed font-light text-stone-600 mb-8">
+                  Every masterpiece begins with a conversation. We delve deep into your story, your aesthetic preferences, and the emotions you wish to evoke. This is where your dream begins to take a tangible shape.
                 </p>
-                <Link href="/contact" className="inline-block text-[11px] uppercase font-bold tracking-[0.25em] border-b border-gray-900 pb-1 hover:text-stone-400 hover:border-stone-400 transition-all">
+                <Link href="/contact" className="inline-block text-[11px] uppercase font-bold tracking-[0.25em] border-b border-stone-900 pb-1 hover:text-stone-400 hover:border-stone-400 transition-all font-sans">
                   Explore Discovery
                 </Link>
               </div>
             </FadeIn>
+
+            {/* Image Column */}
+            <FadeIn delay={0.2}>
+              <div className="relative w-full h-[600px] overflow-hidden rounded-sm shadow-xl bg-white">
+                <Image
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJpuetgF-FDtmCBDmR0Ys_6xYqFMTlT9J5CeT5CaoEoGJluPGNXa0k_ZAxy2HA0Y8QH96Xydx4fd5M94gTx_rl0_6z3dZzLD2XoUqu-fN2-ojYZk6HOnnSAvdNp14JOODUZEmIUKCMiSxbznKlgIRa9fTbLKqP6OKrvnUmvfipToIvBvkjAkt_bKAp4pAlu9TQk0_m5oZGgykC4eXDSeuA8UX1CTMV95dB6wfnHajLRzKnCHL58GERFfPV1FHqZ74O35nboTabCJG2"
+                  alt="Consultation session with mood boards"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            </FadeIn>
+
           </div>
         </section>
 
-        {/* ── Step 02: Design & Curation (Image Right) ── */}
-        <section className="py-20 md:py-32 bg-stone-50/30 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-            <FadeIn>
-              <div className="relative order-1">
-                <span className="text-[8rem] md:text-[12rem] leading-none absolute -z-10 opacity-15 -top-12 -left-8 font-serif text-stone-200 select-none">02</span>
-                <p className="text-[10px] uppercase font-semibold tracking-[0.25em] text-stone-400 mb-4">Mood Boards &amp; Palettes</p>
-                <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-snug">Design &amp; Curation</h2>
-                <p className="text-gray-900 leading-relaxed mb-10 font-light">
+        {/* ── Step 02: Design & Curation (Image Left / Text Right) ── */}
+        <section className="w-full py-24 md:py-32 px-8 bg-stone-900 text-white">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            {/* Image Column */}
+            <FadeIn delay={0.2} className="order-2 md:order-1">
+              <div className="relative w-full h-[600px] overflow-hidden rounded-sm shadow-xl bg-stone-800">
+                <Image
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD1TB0NnptUbv3exwG-f68K6tQ0pY1rFfe1dHTUuzvaYRgsJxcfxH9FEd-AB9rdS7XbN5dkvwH0P8t_jjtZXPa_Z5DaUbBzPbyGO78hisoXTwweYYZFRazpQqIZrBQaf3EmNtcSanTdjtM5ffHpBeLWJAiOAN4UL5n9iG2OmN0TPBadrnZoq7WfEDpqauP6Z_fIvxBAGlNtfLjkuYNlPXT9hC_o4_lUet3YdjXFGJnp6iscELkb0miBwglVLDuBt4gsp4VHVlZdhX9"
+                  alt="Elegant flat lay of table setting"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            </FadeIn>
+
+            {/* Text Column */}
+            <FadeIn className="order-1 md:order-2">
+              <div className="flex flex-col items-start text-left">
+                <p className="text-[10px] uppercase font-semibold tracking-[0.25em] text-[#D4AF37] mb-4 font-sans">Mood Boards &amp; Palettes</p>
+                <h2 className="font-[var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl uppercase tracking-wide mb-8 leading-tight text-white">
+                  Design &amp; Curation
+                </h2>
+                <p className="font-sans text-base md:text-lg leading-relaxed font-light text-stone-300 mb-8">
                   Our creative team curates a bespoke design narrative, selecting textures, colors, and floral scents that resonate with your personality. We build a visual language that is exclusively yours.
                 </p>
-                <Link href="/portfolio" className="inline-block text-[11px] uppercase font-bold tracking-[0.25em] border-b border-gray-900 pb-1 hover:text-stone-400 hover:border-stone-400 transition-all">
+                <Link href="/portfolio" className="inline-block text-[11px] uppercase font-bold tracking-[0.25em] border-b border-white pb-1 hover:text-stone-300 hover:border-stone-300 transition-all font-sans">
                   View Curation
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="relative order-2">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD1TB0NnptUbv3exwG-f68K6tQ0pY1rFfe1dHTUuzvaYRgsJxcfxH9FEd-AB9rdS7XbN5dkvwH0P8t_jjtZXPa_Z5DaUbBzPbyGO78hisoXTwweYYZFRazpQqIZrBQaf3EmNtcSanTdjtM5ffHpBeLWJAiOAN4UL5n9iG2OmN0TPBadrnZoq7WfEDpqauP6Z_fIvxBAGlNtfLjkuYNlPXT9hC_o4_lUet3YdjXFGJnp6iscELkb0miBwglVLDuBt4gsp4VHVlZdhX9"
-                    alt="Elegant flat lay of table setting"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </FadeIn>
+
           </div>
         </section>
 
-        {/* ── Step 03: Vendor Selection (Image Left) ── */}
-        <section className="py-20 md:py-32 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-            <FadeIn delay={0.2}>
-              <div className="relative order-2 md:order-1">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvnEkg4oZIJyRBPyfiTMlv4aW6S7QtwE3ZuPnL4n_Rk43UIecreLuwDZuVNFAfZ1TO0kzLNiVYRner3ZV92X3Y52XyeexCSshI68oJQ3gJa6SMDfoPEX417f35qUEatQK1m_MXPCZdcHzwrDaNYdMZZWOWBh-jmDaAoc6cprG_Aj5_upinAlHr49j1-ZgbjUMLlau6FzF2jBP8Al2k8_5bK_qUSFEbw6GjLLcxmm-f-3wEe513iCeVIznPDVyIIh1y-eiiXJnrNAoD"
-                    alt="Detailed lace of a wedding gown"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </FadeIn>
+        {/* ── Step 03: Vendor Selection (Text Left / Image Right) ── */}
+        <section className="w-full py-24 md:py-32 px-8 bg-stone-100">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            {/* Text Column */}
             <FadeIn>
-              <div className="relative order-1 md:order-2">
-                <span className="text-[8rem] md:text-[12rem] leading-none absolute -z-10 opacity-15 -top-12 -left-8 font-serif text-stone-200 select-none">03</span>
-                <p className="text-[10px] uppercase font-semibold tracking-[0.25em] text-stone-400 mb-4">The Global Network</p>
-                <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-snug">Vendor Selection</h2>
-                <p className="text-gray-900 leading-relaxed mb-10 font-light">
+              <div className="flex flex-col items-start text-left">
+                <p className="text-[10px] uppercase font-semibold tracking-[0.25em] text-[#D4AF37] mb-4 font-sans">The Global Network</p>
+                <h2 className="font-[var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl uppercase tracking-wide mb-8 leading-tight text-stone-800">
+                  Vendor Selection
+                </h2>
+                <p className="font-sans text-base md:text-lg leading-relaxed font-light text-stone-600 mb-8">
                   We connect you with our vetted network of world-class artisans, from Michelin-starred caterers to avant-garde florists. We manage the contracts and details so you only have to make the final choice.
                 </p>
-                <Link href="/about" className="inline-block text-[11px] uppercase font-bold tracking-[0.25em] border-b border-gray-900 pb-1 hover:text-stone-400 hover:border-stone-400 transition-all">
+                <Link href="/about" className="inline-block text-[11px] uppercase font-bold tracking-[0.25em] border-b border-stone-900 pb-1 hover:text-stone-400 hover:border-stone-400 transition-all font-sans">
                   Meet Our Partners
                 </Link>
               </div>
             </FadeIn>
+
+            {/* Image Column */}
+            <FadeIn delay={0.2}>
+              <div className="relative w-full h-[600px] overflow-hidden rounded-sm shadow-xl bg-white">
+                <Image
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvnEkg4oZIJyRBPyfiTMlv4aW6S7QtwE3ZuPnL4n_Rk43UIecreLuwDZuVNFAfZ1TO0kzLNiVYRner3ZV92X3Y52XyeexCSshI68oJQ3gJa6SMDfoPEX417f35qUEatQK1m_MXPCZdcHzwrDaNYdMZZWOWBh-jmDaAoc6cprG_Aj5_upinAlHr49j1-ZgbjUMLlau6FzF2jBP8Al2k8_5bK_qUSFEbw6GjLLcxmm-f-3wEe513iCeVIznPDVyIIh1y-eiiXJnrNAoD"
+                  alt="Detailed lace of a wedding gown"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            </FadeIn>
+
           </div>
         </section>
 
-        {/* ── Step 04: Execution (Image Right) ── */}
-        <section className="py-20 md:py-32 bg-stone-50/30 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-            <FadeIn>
-              <div className="relative order-1">
-                <span className="text-[8rem] md:text-[12rem] leading-none absolute -z-10 opacity-15 -top-12 -left-8 font-serif text-stone-200 select-none">04</span>
-                <p className="text-[10px] uppercase font-semibold tracking-[0.25em] text-stone-400 mb-4">Day-of Management</p>
-                <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-snug">Execution</h2>
-                <p className="text-gray-900 leading-relaxed mb-10 font-light">
+        {/* ── Step 04: Day-of Execution (Image Left / Text Right) ── */}
+        <section className="w-full py-24 md:py-32 px-8 bg-white">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            {/* Image Column */}
+            <FadeIn delay={0.2} className="order-2 md:order-1">
+              <div className="relative w-full h-[600px] overflow-hidden rounded-sm shadow-xl bg-stone-50">
+                <Image
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsiq5pRQRXJNEWD-shPkwuz1b3O8SYxDHjKAnendkyNG5H6BYBVLMTi0Df0rPU_O1XSX5adhpZ6mZsoqztaT1Y4XBlSxbdoYDic5WcGDbJCxiSzBaQRwIF6npXdK9mCNCMxmtgaaMZbA1Zym3YTehhGVZXKTGIeCkVM0phe26V6o4YO8JlkmvOgnu80QxMjTBJTyn15jM2U96t4ZtJvdJsqK-zTnzd0-bRAiR41OuXIAmQKNXHGtd65jBc6oJdHi6xbjQOYKMAPyMZ"
+                  alt="Grand ballroom reception setting"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            </FadeIn>
+
+            {/* Text Column */}
+            <FadeIn className="order-1 md:order-2">
+              <div className="flex flex-col items-start text-left">
+                <p className="text-[10px] uppercase font-semibold tracking-[0.25em] text-[#D4AF37] mb-4 font-sans">Day-of Management</p>
+                <h2 className="font-[var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl uppercase tracking-wide mb-8 leading-tight text-stone-800">
+                  Day-of Execution
+                </h2>
+                <p className="font-sans text-base md:text-lg leading-relaxed font-light text-stone-600 mb-8">
                   On your wedding day, our team acts as the conductors of a silent orchestra. We ensure every petal is in place, every transition is seamless, and you are free to fully inhabit the joy of the moment.
                 </p>
-                <Link href="/portfolio" className="inline-block text-[11px] uppercase font-bold tracking-[0.25em] border-b border-gray-900 pb-1 hover:text-stone-400 hover:border-stone-400 transition-all">
+                <Link href="/portfolio" className="inline-block text-[11px] uppercase font-bold tracking-[0.25em] border-b border-stone-900 pb-1 hover:text-stone-400 hover:border-stone-400 transition-all font-sans">
                   See The Result
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="relative order-2">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsiq5pRQRXJNEWD-shPkwuz1b3O8SYxDHjKAnendkyNG5H6BYBVLMTi0Df0rPU_O1XSX5adhpZ6mZsoqztaT1Y4XBlSxbdoYDic5WcGDbJCxiSzBaQRwIF6npXdK9mCNCMxmtgaaMZbA1Zym3YTehhGVZXKTGIeCkVM0phe26V6o4YO8JlkmvOgnu80QxMjTBJTyn15jM2U96t4ZtJvdJsqK-zTnzd0-bRAiR41OuXIAmQKNXHGtd65jBc6oJdHi6xbjQOYKMAPyMZ"
-                    alt="Grand ballroom reception setting"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </FadeIn>
+
           </div>
         </section>
 
         {/* ── Bottom CTA ── */}
         <FadeIn>
-          <section className="py-32 md:py-48 px-6 bg-white border-t border-stone-100">
+          <section className="py-24 md:py-36 px-6 bg-white border-t border-stone-100">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="font-serif text-4xl md:text-6xl font-light mb-12">Ready to start your journey?</h2>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mb-12">Ready to start your journey?</h2>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
                 <Link
                   href="/contact"
@@ -171,7 +191,7 @@ export default function ProcessPage() {
                 </Link>
                 <Link
                   href="/portfolio"
-                  className="text-[11px] uppercase font-bold tracking-[0.25em] border-b border-gray-900 pb-1 hover:text-stone-400 hover:border-stone-400 transition-all"
+                  className="text-[11px] uppercase font-bold tracking-[0.25em] border-b border-gray-900 pb-1 hover:text-stone-400 hover:border-stone-400 transition-all font-sans"
                 >
                   View Recent Portfolio
                 </Link>

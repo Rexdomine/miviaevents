@@ -66,7 +66,7 @@ export default function PortfolioGrid() {
                         style={{ backgroundImage: `url('${item.image}')` }}
                     ></div>
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 opacity-60"></div>
-                    <div className="absolute inset-0 p-8 flex flex-col justify-between text-gray-900">
+                    <div className="absolute inset-0 p-8 flex flex-col justify-between text-[#f8f7f6]">
                         <div className="flex justify-between items-start">
                             <span className="text-xs uppercase tracking-widest opacity-80">{item.volume}</span>
                             {item.featured && <span className="material-symbols-outlined text-primary">auto_awesome</span>}

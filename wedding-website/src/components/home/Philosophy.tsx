@@ -3,7 +3,7 @@ import FadeIn from '@/components/FadeIn';
 
 export default function Philosophy() {
   return (
-    <section className="py-32 px-6 md:px-12 bg-background-light dark:bg-background-dark">
+    <section className="py-20 md:py-24 px-6 md:px-12 bg-background-light dark:bg-background-dark">
       <FadeIn>
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-primary uppercase tracking-[0.3em] text-xs font-bold mb-8 block">About Mivia Events</span>

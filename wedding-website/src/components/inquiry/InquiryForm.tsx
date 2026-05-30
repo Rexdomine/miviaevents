@@ -24,7 +24,7 @@ export default function InquiryForm() {
   };
 
   return (
-    <div className="w-full md:w-7/12 lg:w-8/12 bg-white p-8 md:p-16 lg:p-24 overflow-y-auto">
+    <div className="w-full md:w-7/12 lg:w-8/12 bg-white p-6 md:p-16 lg:p-24 overflow-y-auto">
       <div className="max-w-2xl mx-auto">
         <div className="mb-12">
           <h2 className="text-3xl font-medium tracking-tight mb-2 text-[#111111]">Consultation Request</h2>
@@ -107,7 +107,7 @@ export default function InquiryForm() {
                     type="text"
                     name="budget"
                     placeholder="Enter your budget (e.g. 5,000,000)"
-                    className="w-full bg-transparent text-[#111111] border-0 border-b border-gray-300 py-3 pl-5 focus:outline-none focus:border-gray-900 focus:ring-0 transition-colors"
+                    className="w-full bg-transparent text-[#111111] border-0 border-b border-gray-300 py-3 pl-7 focus:outline-none focus:border-gray-900 focus:ring-0 transition-colors"
                     required
                   />
                 </div>

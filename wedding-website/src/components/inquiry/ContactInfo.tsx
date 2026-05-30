@@ -19,7 +19,7 @@ export default function ContactInfo() {
           </div>
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-primary">mail</span>
-            <span className="text-sm tracking-wide">miviaevents@gmail.com</span>
+            <span className="text-sm tracking-wide">hello@miviaevents.com</span>
           </div>
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-primary">call</span>
