@@ -24,7 +24,7 @@ export default function InquiryForm() {
   };
 
   return (
-    <div className="w-full md:w-7/12 lg:w-8/12 bg-white p-6 md:p-16 lg:p-24 overflow-y-auto">
+    <div className="w-full md:w-1/2 bg-white p-6 md:p-16 lg:p-24 overflow-y-auto">
       <div className="max-w-2xl mx-auto">
         <div className="mb-12">
           <h2 className="text-3xl font-medium tracking-tight mb-2 text-[#111111]">Consultation Request</h2>
