@@ -30,7 +30,7 @@ This project is built with scalability in mind, using highly modular React compo
 Global tokens are configured inside `tailwind.config.ts`:
 * **Typography:** `Newsreader` (Serif) for an editorial feel.
 * **Colors:**
-  * Primary Gold: `#eebd2b`
+  * Primary Maroon: `#701a2c`
   * Background Light: `#f8f7f6`
   * Background Dark: `#221d10`
   * Text Dark: `#1b180d`

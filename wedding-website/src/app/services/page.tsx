@@ -28,7 +28,7 @@ export default function ServicesPage() {
             />
           </motion.div>
           {/* Elegant Dark Vignette Overlay */}
-          <div className="absolute inset-0 bg-black/55 -z-10"></div>
+          <div className="absolute inset-0 bg-black/65 -z-10"></div>
         </div>
 
         {/* Centered Editorial Content */}
@@ -48,9 +48,9 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 1.2, ease: 'easeOut' }}
-            className="font-display text-4xl md:text-5xl lg:text-7xl text-white max-w-5xl leading-tight font-medium drop-shadow-md"
+            className="font-display text-4xl md:text-5xl lg:text-7xl text-white max-w-5xl leading-tight font-semibold drop-shadow-lg"
           >
-            The <span className="font-serif italic font-light text-primary">Signature Experience</span> &amp; <span className="font-serif italic font-light text-primary">curated collections</span>
+            The <span className="font-serif italic font-bold text-white">Signature Experience</span> &amp; <span className="font-serif italic font-bold text-white">curated collections</span>
           </motion.h1>
 
           {/* Premium Subtitle */}
@@ -58,7 +58,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1.2, ease: 'easeOut' }}
-            className="font-sans text-white/85 max-w-2xl mt-8 text-sm md:text-base font-light tracking-wide leading-relaxed drop-shadow-sm"
+            className="font-sans text-white max-w-2xl mt-8 text-sm md:text-base font-normal tracking-wide leading-relaxed drop-shadow-md"
           >
             Bespoke design, seamless event coordination, and luxury planning services tailored for extraordinary couples worldwide.
           </motion.p>

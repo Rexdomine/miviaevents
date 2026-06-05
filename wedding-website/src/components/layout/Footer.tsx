@@ -62,7 +62,7 @@ export default function Footer() {
             preserveAspectRatio="none"
           >
             <motion.path
-              fill="#eebd2b"
+              fill="#701a2c"
               animate={{
                 d: [
                   "M0,60 Q360,120 720,60 T1440,60 L1440,240 L0,240 Z",
@@ -103,15 +103,15 @@ export default function Footer() {
               {/* Accepting Commissions Pulse Light */}
               <div className="flex items-center gap-3">
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-taupe opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-taupe"></span>
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-primary font-sans">
+                <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-taupe font-sans">
                   Active Booking commissions for 2026/2027
                 </span>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight font-serif text-white">
-                Ready to start your <span className="italic text-primary font-normal">journey?</span>
+                Ready to start your <span className="italic text-taupe font-normal">journey?</span>
               </h2>
               <p className="text-[#f8f7f6]/60 text-base max-w-md font-sans font-light leading-relaxed">
                 Let&apos;s create something extraordinary together. Contact our team to begin the design process.
@@ -119,7 +119,7 @@ export default function Footer() {
               <div className="pt-2">
                 <Link 
                   href="mailto:hello@miviaevents.com" 
-                  className="text-2xl sm:text-3xl font-light hover:text-primary transition-colors border-b border-primary/30 pb-1 font-serif text-white tracking-wide"
+                  className="text-2xl sm:text-3xl font-light hover:text-taupe transition-colors border-b border-taupe/30 pb-1 font-serif text-white tracking-wide"
                 >
                   hello@miviaevents.com
                 </Link>
