@@ -6,32 +6,26 @@ import { motion, AnimatePresence } from 'framer-motion';
 const highlightVideos = [
   {
     id: 1,
-    title: "Volume I: The Reception Banquet",
-    duration: "0:30",
-    youtubeId: "diui1v56Bgs",
-  },
-  {
-    id: 2,
-    title: "Volume II: The Grand Entrance",
+    title: "Volume I: The Grand Entrance",
     duration: "0:45",
     youtubeId: "gs2cBwh92c0",
   },
   {
-    id: 3,
-    title: "Volume III: Bespoke Celebrations",
+    id: 2,
+    title: "Volume II: Bespoke Celebrations",
     duration: "1:15",
     youtubeId: "2_WblhbDjO8",
   },
   {
-    id: 4,
-    title: "Volume IV: Golden Hour Magic",
+    id: 3,
+    title: "Volume III: Golden Hour Magic",
     duration: "1:05",
     youtubeId: "xH4vpx-cbYM",
   },
   {
-    id: 5,
-    title: "Volume V: The First Dance",
-    duration: "0:15",
+    id: 4,
+    title: "Volume IV: Capturing the Joy",
+    duration: "0:40",
     youtubeId: "DYiTCOndISE",
   }
 ];
