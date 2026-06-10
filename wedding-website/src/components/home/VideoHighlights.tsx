@@ -6,21 +6,45 @@ import { motion, AnimatePresence } from 'framer-motion';
 const highlightVideos = [
   {
     id: 1,
-    title: "Volume I: The Grand Entrance",
-    duration: "1:30",
-    videoUrl: "/WhatsApp Video 2026-05-22 at 18.09.23.mp4",
+    title: "Volume I: The Reception Banquet",
+    duration: "0:30",
+    videoUrl: "/IMG_8782.mp4",
   },
   {
     id: 2,
-    title: "Volume II: Bespoke Celebrations",
-    duration: "0:27",
-    videoUrl: "/WhatsApp Video 2026-05-22 at 18.32.47.mp4",
+    title: "Volume II: The Grand Entrance",
+    duration: "0:45",
+    videoUrl: "/IMG_7739.MP4",
   },
   {
     id: 3,
-    title: "Volume III: The Reception Banquet",
-    duration: "0:29",
-    videoUrl: "/WhatsApp Video 2026-05-22 at 21.40.05 (1).mp4",
+    title: "Volume III: Bespoke Celebrations",
+    duration: "1:15",
+    videoUrl: "/IMG_8530.mp4",
+  },
+  {
+    id: 4,
+    title: "Volume IV: Golden Hour Magic",
+    duration: "1:05",
+    videoUrl: "/IMG_9317 (1).mp4",
+  },
+  {
+    id: 5,
+    title: "Volume V: The First Dance",
+    duration: "0:15",
+    videoUrl: "/IMG_9318.mp4",
+  },
+  {
+    id: 6,
+    title: "Volume VI: Late Night Spark",
+    duration: "0:25",
+    videoUrl: "/IMG_9448.mp4",
+  },
+  {
+    id: 7,
+    title: "Volume VII: Capturing the Joy",
+    duration: "0:40",
+    videoUrl: "/IMG_8536.mp4",
   }
 ];
 
