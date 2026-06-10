@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const highlightVideos = [
@@ -41,6 +41,23 @@ export default function VideoHighlights() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const iframeRefs = useRef<(HTMLIFrameElement | null)[]>([]);
+
+  // Synchronize playback state using postMessage to avoid page reload on state changes
+  useEffect(() => {
+    const el = iframeRefs.current[activeIndex];
+    if (el && el.contentWindow) {
+      try {
+        const muteCmd = isMuted ? 'mute' : 'unMute';
+        el.contentWindow.postMessage(JSON.stringify({ event: 'command', func: muteCmd, args: '' }), '*');
+        
+        const playCmd = isPlaying ? 'playVideo' : 'pauseVideo';
+        el.contentWindow.postMessage(JSON.stringify({ event: 'command', func: playCmd, args: '' }), '*');
+      } catch (err) {
+        console.log("Could not post message to iframe:", err);
+      }
+    }
+  }, [activeIndex, isPlaying, isMuted]);
 
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -87,8 +104,20 @@ export default function VideoHighlights() {
             >
               {isActive && (
                 <iframe
-                  className="w-full h-full object-cover rounded-inherit"
-                  src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=${isPlaying ? 1 : 0}&mute=${isMuted ? 1 : 0}&loop=1&playlist=${video.youtubeId}&controls=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3`}
+                  ref={(el) => {
+                    iframeRefs.current[idx] = el;
+                  }}
+                  style={{
+                    width: '100vw',
+                    height: '177.78vw',
+                    minHeight: '115vh',
+                    minWidth: '56.25vh',
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%) scale(1.15)',
+                  }}
+                  src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=${isPlaying ? 1 : 0}&mute=${isMuted ? 1 : 0}&loop=1&playlist=${video.youtubeId}&controls=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&enablejsapi=1`}
                   title="Wedding Highlight"
                   frameBorder="0"
                   allow="autoplay; encrypted-media"
@@ -187,12 +216,11 @@ export default function VideoHighlights() {
                         ? 'ring-2 ring-primary scale-105 shadow-primary/20' 
                         : 'border border-white/10 group-hover:border-white/40'
                     }`}>
-                      <iframe
-                        className="w-full h-full object-cover rounded-inherit pointer-events-none"
-                        src={`https://www.youtube.com/embed/${video.youtubeId}?controls=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3`}
-                        title="Wedding Highlight Thumbnail"
-                        frameBorder="0"
-                      ></iframe>
+                      <img
+                        src={`https://img.youtube.com/vi/${video.youtubeId}/0.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none"
+                      />
                       
                       {/* Dark overlay inside thumbnail */}
                       <div className={`absolute inset-0 transition-opacity duration-300 ${
